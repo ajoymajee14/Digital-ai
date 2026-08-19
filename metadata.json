@@ -1,0 +1,6 @@
+{
+  "name": "Digital AI Class",
+  "description": "Learn AI, build skills, and create your future with premier AI courses and interactive learning.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
