@@ -36,16 +36,16 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
   }, [searchQuery, selectedCategory, selectedLevel, sortBy, onlySubscription]);
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-white pt-28 pb-20">
+    <div className="min-h-screen bg-white text-slate-950 pt-28 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white">Explore The Library</h1>
-          <p className="text-slate-400 text-sm mt-3">Discover practical courses taught by industry veterans to master future skills.</p>
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900">Explore The Library</h1>
+          <p className="text-slate-600 text-sm mt-3">Discover practical courses taught by industry veterans to master future skills.</p>
         </div>
 
         {/* Search & Main Filter Bar */}
-        <div className="bg-[#0D1321] border border-white/10 rounded-3xl p-6 shadow-2xl mb-10">
+        <div className="bg-[#F0FDF4] border border-emerald-200 rounded-3xl p-6 shadow-sm mb-10">
           <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
             <div className="relative w-full md:w-96">
               <Search className="absolute left-3.5 top-3.5 w-4 h-4 text-slate-400" />
@@ -54,7 +54,7 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
                 placeholder="Search courses, tags, or topics..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#070B14] border border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
+                className="w-full bg-white border border-emerald-200 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-emerald-500 shadow-sm"
               />
             </div>
 
@@ -62,7 +62,7 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
               <select 
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="bg-[#070B14] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-slate-300 focus:outline-none"
+                className="bg-white border border-emerald-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none shadow-sm"
               >
                 <option value="All">All Categories</option>
                 {categoriesList.map(c => <option key={c.id} value={c.name}>{c.name}</option>)}
@@ -71,7 +71,7 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
               <select 
                 value={selectedLevel}
                 onChange={(e) => setSelectedLevel(e.target.value)}
-                className="bg-[#070B14] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-slate-300 focus:outline-none"
+                className="bg-white border border-emerald-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none shadow-sm"
               >
                 <option value="All">All Levels</option>
                 <option value="Beginner">Beginner</option>
@@ -82,7 +82,7 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
               <select 
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="bg-[#070B14] border border-white/10 rounded-xl px-4 py-2.5 text-sm text-slate-300 focus:outline-none"
+                className="bg-white border border-emerald-200 rounded-xl px-4 py-2.5 text-sm text-slate-700 focus:outline-none shadow-sm"
               >
                 <option value="popular">Most Popular</option>
                 <option value="rated">Highest Rated</option>
@@ -93,30 +93,30 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
             </div>
           </div>
 
-          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-white/10 text-xs">
-            <label className="flex items-center gap-2 cursor-pointer text-slate-300">
+          <div className="flex items-center gap-4 mt-4 pt-4 border-t border-emerald-200 text-xs">
+            <label className="flex items-center gap-2 cursor-pointer text-slate-700">
               <input 
                 type="checkbox" 
                 checked={onlySubscription}
                 onChange={(e) => setOnlySubscription(e.target.checked)}
-                className="rounded border-slate-700 bg-[#070B14] text-indigo-600 focus:ring-0"
+                className="rounded border-emerald-300 bg-white text-emerald-600 focus:ring-0"
               />
               <span>Included With Pro Pass Subscription</span>
             </label>
-            <span className="text-slate-500">|</span>
-            <span className="text-slate-400">Showing {filteredCourses.length} courses</span>
+            <span className="text-slate-400">|</span>
+            <span className="text-slate-600">Showing {filteredCourses.length} courses</span>
           </div>
         </div>
 
         {/* Course Grid (Responsive: 1 col mobile, 2 col tablet, 3-4 col desktop) */}
         {filteredCourses.length === 0 ? (
-          <div className="text-center py-20 bg-[#0D1321] border border-white/10 rounded-3xl">
-            <BookOpen className="w-12 h-12 text-slate-500 mx-auto mb-4" />
-            <h3 className="text-lg font-bold text-white">No courses found</h3>
-            <p className="text-xs text-slate-400 mt-1">Try adjusting your search criteria or filters.</p>
+          <div className="text-center py-20 bg-[#F0FDF4] border border-emerald-200 rounded-3xl">
+            <BookOpen className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+            <h3 className="text-lg font-bold text-slate-900">No courses found</h3>
+            <p className="text-xs text-slate-600 mt-1">Try adjusting your search criteria or filters.</p>
             <button 
               onClick={() => { setSearchQuery(''); setSelectedCategory('All'); setSelectedLevel('All'); setOnlySubscription(false); }}
-              className="mt-4 bg-indigo-600 text-white px-4 py-2 rounded-xl text-xs font-semibold"
+              className="mt-4 bg-emerald-600 text-white px-4 py-2 rounded-xl text-xs font-semibold shadow"
             >
               Reset Filters
             </button>
@@ -127,7 +127,7 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
               <div 
                 key={course.id}
                 onClick={() => { setSelectedCourse(course); setCurrentView('course-detail'); }}
-                className="group bg-[#0D1321] border border-white/10 rounded-3xl overflow-hidden shadow-xl hover:border-indigo-500/50 transition-all duration-300 flex flex-col cursor-pointer"
+                className="group bg-white border border-emerald-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:border-emerald-300 transition-all duration-300 flex flex-col cursor-pointer"
               >
                 <div className="relative h-44 overflow-hidden">
                   <img 
@@ -135,11 +135,11 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
                     alt={course.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-[#070B14]/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-cyan-300 border border-white/10">
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-emerald-700 border border-emerald-200 shadow-sm">
                     {course.category}
                   </div>
                   {course.isSubscriptionIncluded && (
-                    <div className="absolute top-3 right-3 bg-indigo-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+                    <div className="absolute top-3 right-3 bg-emerald-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
                       PRO PASS
                     </div>
                   )}
@@ -147,28 +147,28 @@ export function CourseLibraryView({ setCurrentView, setSelectedCourse }: CourseL
 
                 <div className="p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-2 text-xs text-slate-400 mb-2">
-                      <span className="flex items-center gap-1 text-amber-400 font-semibold">
+                    <div className="flex items-center gap-2 text-xs text-slate-500 mb-2">
+                      <span className="flex items-center gap-1 text-amber-500 font-semibold">
                         <Star className="w-3.5 h-3.5 fill-current" /> {course.rating}
                       </span>
                       <span>•</span>
                       <span>{course.duration}</span>
                     </div>
 
-                    <h3 className="text-base font-bold text-white group-hover:text-cyan-400 transition-colors line-clamp-1">
+                    <h3 className="text-base font-bold text-slate-900 group-hover:text-emerald-600 transition-colors line-clamp-1">
                       {course.title}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-1.5 line-clamp-2 leading-relaxed">
+                    <p className="text-xs text-slate-600 mt-1.5 line-clamp-2 leading-relaxed">
                       {course.subtitle}
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-white/10 flex items-center justify-between">
+                  <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between">
                     <div>
-                      <span className="text-[10px] text-slate-500 block">Price</span>
-                      <span className="text-sm font-extrabold text-white">₹{course.price.toLocaleString()}</span>
+                      <span className="text-[10px] text-slate-400 block">Price</span>
+                      <span className="text-sm font-extrabold text-slate-900">₹{course.price.toLocaleString()}</span>
                     </div>
-                    <span className="text-xs font-semibold text-indigo-400 group-hover:translate-x-1 transition-transform">
+                    <span className="text-xs font-semibold text-emerald-600 group-hover:translate-x-1 transition-transform">
                       View →
                     </span>
                   </div>

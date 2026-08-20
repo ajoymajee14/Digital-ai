@@ -25,7 +25,7 @@ export function Navbar({ currentView, setCurrentView, user, onOpenAuth, onLogout
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-[#070B14]/85 backdrop-blur-md border-b border-white/10 py-3 shadow-2xl' : 'bg-transparent py-5'
+      scrolled ? 'bg-white/90 backdrop-blur-md border-b border-emerald-100 py-3 shadow-sm' : 'bg-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between">
         {/* Logo */}
@@ -33,41 +33,41 @@ export function Navbar({ currentView, setCurrentView, user, onOpenAuth, onLogout
           onClick={() => setCurrentView('home')} 
           className="flex items-center gap-3 cursor-pointer group"
         >
-          <div className="w-8 h-8 bg-gradient-to-br from-[#6366F1] to-[#22D3EE] rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-teal-400 rounded-lg flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
             <div className="w-4 h-4 bg-white rounded-sm rotate-45"></div>
           </div>
-          <span className="text-xl font-bold tracking-tight">Digital AI Class</span>
+          <span className="text-xl font-bold tracking-tight text-slate-900">Digital AI Class</span>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
           <button 
             onClick={() => setCurrentView('home')} 
-            className={`hover:text-white transition-colors ${currentView === 'home' ? 'text-white font-semibold' : ''}`}
+            className={`hover:text-emerald-600 transition-colors ${currentView === 'home' ? 'text-emerald-600 font-semibold' : ''}`}
           >
             Home
           </button>
           <button 
             onClick={() => setCurrentView('courses')} 
-            className={`hover:text-white transition-colors ${currentView === 'courses' ? 'text-white font-semibold' : ''}`}
+            className={`hover:text-emerald-600 transition-colors ${currentView === 'courses' ? 'text-emerald-600 font-semibold' : ''}`}
           >
             Courses
           </button>
           <button 
             onClick={() => setCurrentView('courses')} 
-            className="hover:text-white transition-colors"
+            className="hover:text-emerald-600 transition-colors"
           >
             Library
           </button>
           <button 
             onClick={() => setCurrentView('pricing')} 
-            className={`hover:text-white transition-colors ${currentView === 'pricing' ? 'text-white font-semibold' : ''}`}
+            className={`hover:text-emerald-600 transition-colors ${currentView === 'pricing' ? 'text-emerald-600 font-semibold' : ''}`}
           >
             Pricing
           </button>
           <button 
             onClick={() => setCurrentView('instructors')} 
-            className={`hover:text-white transition-colors ${currentView === 'instructors' ? 'text-white font-semibold' : ''}`}
+            className={`hover:text-emerald-600 transition-colors ${currentView === 'instructors' ? 'text-emerald-600 font-semibold' : ''}`}
           >
             Instructors
           </button>
@@ -79,40 +79,40 @@ export function Navbar({ currentView, setCurrentView, user, onOpenAuth, onLogout
             <div className="relative">
               <button 
                 onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-                className="flex items-center gap-3 bg-white/5 border border-white/10 hover:border-indigo-500/50 px-3 py-2 rounded-xl transition-all"
+                className="flex items-center gap-3 bg-emerald-50 border border-emerald-200 hover:border-emerald-400 px-3 py-2 rounded-xl transition-all"
               >
-                <img src={user.avatar} alt={user.name} className="w-8 h-8 rounded-full object-cover border border-cyan-400/40" />
+                <img src={user.avatar} alt={user.name} className="w-8 h-8 rounded-full object-cover border border-emerald-400/40" />
                 <div className="text-left">
-                  <span className="block text-xs font-semibold text-white">{user.name}</span>
-                  <span className="block text-[10px] text-cyan-400 uppercase tracking-wider">{user.subscription} Pass</span>
+                  <span className="block text-xs font-semibold text-slate-900">{user.name}</span>
+                  <span className="block text-[10px] text-emerald-600 uppercase tracking-wider">{user.subscription} Pass</span>
                 </div>
-                <ChevronDown className="w-4 h-4 text-slate-400" />
+                <ChevronDown className="w-4 h-4 text-slate-500" />
               </button>
 
               {userDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-56 bg-[#0D1321] border border-white/10 rounded-2xl shadow-2xl py-2 z-50 backdrop-blur-xl">
-                  <div className="px-4 py-2 border-b border-white/10">
-                    <p className="text-xs text-slate-400">Signed in as</p>
-                    <p className="text-sm font-semibold text-white truncate">{user.email}</p>
+                <div className="absolute right-0 mt-2 w-56 bg-white border border-emerald-100 rounded-2xl shadow-xl py-2 z-50">
+                  <div className="px-4 py-2 border-b border-slate-100">
+                    <p className="text-xs text-slate-500">Signed in as</p>
+                    <p className="text-sm font-semibold text-slate-900 truncate">{user.email}</p>
                   </div>
                   <button 
                     onClick={() => { setCurrentView('dashboard'); setUserDropdownOpen(false); }}
-                    className="w-full text-left px-4 py-2.5 text-sm text-slate-200 hover:bg-white/5 flex items-center gap-2.5"
+                    className="w-full text-left px-4 py-2.5 text-sm text-slate-700 hover:bg-emerald-50 flex items-center gap-2.5"
                   >
-                    <BookOpen className="w-4 h-4 text-cyan-400" /> My Learning Dashboard
+                    <BookOpen className="w-4 h-4 text-emerald-600" /> My Learning Dashboard
                   </button>
                   {user.role === 'admin' && (
                     <button 
                       onClick={() => { setCurrentView('admin'); setUserDropdownOpen(false); }}
-                      className="w-full text-left px-4 py-2.5 text-sm text-purple-300 hover:bg-white/5 flex items-center gap-2.5"
+                      className="w-full text-left px-4 py-2.5 text-sm text-emerald-700 hover:bg-emerald-50 flex items-center gap-2.5"
                     >
-                      <Shield className="w-4 h-4 text-purple-400" /> Admin Console
+                      <Shield className="w-4 h-4 text-emerald-600" /> Admin Console
                     </button>
                   )}
-                  <div className="border-t border-white/10 my-1"></div>
+                  <div className="border-t border-slate-100 my-1"></div>
                   <button 
                     onClick={() => { onLogout(); setUserDropdownOpen(false); }}
-                    className="w-full text-left px-4 py-2.5 text-sm text-red-400 hover:bg-red-500/10 flex items-center gap-2.5"
+                    className="w-full text-left px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 flex items-center gap-2.5"
                   >
                     <LogOut className="w-4 h-4" /> Sign Out
                   </button>
@@ -123,13 +123,13 @@ export function Navbar({ currentView, setCurrentView, user, onOpenAuth, onLogout
             <div className="flex items-center gap-6">
               <button 
                 onClick={onOpenAuth}
-                className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                className="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors"
               >
                 Log In
               </button>
               <button 
                 onClick={onOpenAuth}
-                className="bg-[#6366F1] hover:bg-[#4F46E5] text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-indigo-500/20"
+                className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-emerald-500/20"
               >
                 Start Learning →
               </button>

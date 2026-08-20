@@ -3,33 +3,33 @@ import { Sparkles, Github, Twitter, Linkedin, Youtube, Mail } from 'lucide-react
 
 export function Footer({ setCurrentView }: { setCurrentView: (v: string) => void }) {
   return (
-    <footer className="bg-[#05080E] border-t border-white/10 text-slate-400 pt-16 pb-12">
+    <footer className="bg-[#F0FDF4] border-t border-emerald-200 text-slate-600 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-10 pb-12 border-b border-emerald-200">
           {/* Brand info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-400 p-[1px]">
-                <div className="w-full h-full bg-[#070B14] rounded-[11px] flex items-center justify-center">
-                  <Sparkles className="w-4 h-4 text-cyan-400" />
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 p-[1px]">
+                <div className="w-full h-full bg-white rounded-[11px] flex items-center justify-center">
+                  <Sparkles className="w-4 h-4 text-emerald-600" />
                 </div>
               </div>
-              <span className="text-white font-bold text-lg tracking-tight">Digital AI Class</span>
+              <span className="text-slate-900 font-bold text-lg tracking-tight">Digital AI Class</span>
             </div>
-            <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-sm text-slate-600 max-w-sm leading-relaxed">
               Empowering the next generation of builders, creators, and professionals with world-class practical artificial intelligence and future-proof skills.
             </p>
             <div className="flex items-center gap-3 pt-2">
-              <a href="#twitter" className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all">
+              <a href="#twitter" className="w-9 h-9 rounded-xl bg-white border border-emerald-200 flex items-center justify-center text-slate-600 hover:text-emerald-600 hover:border-emerald-400 transition-all shadow-sm">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#linkedin" className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all">
+              <a href="#linkedin" className="w-9 h-9 rounded-xl bg-white border border-emerald-200 flex items-center justify-center text-slate-600 hover:text-emerald-600 hover:border-emerald-400 transition-all shadow-sm">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="#youtube" className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all">
+              <a href="#youtube" className="w-9 h-9 rounded-xl bg-white border border-emerald-200 flex items-center justify-center text-slate-600 hover:text-emerald-600 hover:border-emerald-400 transition-all shadow-sm">
                 <Youtube className="w-4 h-4" />
               </a>
-              <a href="#github" className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 hover:text-cyan-400 hover:border-cyan-400/50 transition-all">
+              <a href="#github" className="w-9 h-9 rounded-xl bg-white border border-emerald-200 flex items-center justify-center text-slate-600 hover:text-emerald-600 hover:border-emerald-400 transition-all shadow-sm">
                 <Github className="w-4 h-4" />
               </a>
             </div>
@@ -37,25 +37,25 @@ export function Footer({ setCurrentView }: { setCurrentView: (v: string) => void
 
           {/* Links col 1 */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Explore</h3>
+            <h3 className="text-slate-900 font-semibold text-sm uppercase tracking-wider mb-4">Explore</h3>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => setCurrentView('courses')} className="hover:text-cyan-400 transition-colors">All Courses</button></li>
-              <li><button onClick={() => setCurrentView('courses')} className="hover:text-cyan-400 transition-colors">Generative AI</button></li>
-              <li><button onClick={() => setCurrentView('courses')} className="hover:text-cyan-400 transition-colors">Prompt Engineering</button></li>
-              <li><button onClick={() => setCurrentView('courses')} className="hover:text-cyan-400 transition-colors">AI Automation</button></li>
-              <li><button onClick={() => setCurrentView('pricing')} className="hover:text-cyan-400 transition-colors">Subscription Pass</button></li>
+              <li><button onClick={() => setCurrentView('courses')} className="hover:text-emerald-600 transition-colors">All Courses</button></li>
+              <li><button onClick={() => setCurrentView('courses')} className="hover:text-emerald-600 transition-colors">Generative AI</button></li>
+              <li><button onClick={() => setCurrentView('courses')} className="hover:text-emerald-600 transition-colors">Prompt Engineering</button></li>
+              <li><button onClick={() => setCurrentView('courses')} className="hover:text-emerald-600 transition-colors">AI Automation</button></li>
+              <li><button onClick={() => setCurrentView('pricing')} className="hover:text-emerald-600 transition-colors">Subscription Pass</button></li>
             </ul>
           </div>
 
           {/* Links col 2 */}
           <div>
-            <h3 className="text-white font-semibold text-sm uppercase tracking-wider mb-4">Platform</h3>
+            <h3 className="text-slate-900 font-semibold text-sm uppercase tracking-wider mb-4">Platform</h3>
             <ul className="space-y-3 text-sm">
-              <li><button onClick={() => setCurrentView('instructors')} className="hover:text-cyan-400 transition-colors">Expert Instructors</button></li>
-              <li><button onClick={() => setCurrentView('about')} className="hover:text-cyan-400 transition-colors">About Mission</button></li>
-              <li><button onClick={() => setCurrentView('dashboard')} className="hover:text-cyan-400 transition-colors">Student Dashboard</button></li>
-              <li><button onClick={() => setCurrentView('admin')} className="hover:text-purple-400 transition-colors">Admin Console</button></li>
-              <li><a href="#verify" onClick={(e) => { e.preventDefault(); setCurrentView('verify-cert'); }} className="hover:text-cyan-400 transition-colors">Verify Certificate</a></li>
+              <li><button onClick={() => setCurrentView('instructors')} className="hover:text-emerald-600 transition-colors">Expert Instructors</button></li>
+              <li><button onClick={() => setCurrentView('about')} className="hover:text-emerald-600 transition-colors">About Mission</button></li>
+              <li><button onClick={() => setCurrentView('dashboard')} className="hover:text-emerald-600 transition-colors">Student Dashboard</button></li>
+              <li><button onClick={() => setCurrentView('admin')} className="hover:text-emerald-700 transition-colors">Admin Console</button></li>
+              <li><a href="#verify" onClick={(e) => { e.preventDefault(); setCurrentView('verify-cert'); }} className="hover:text-emerald-600 transition-colors">Verify Certificate</a></li>
             </ul>
           </div>
 

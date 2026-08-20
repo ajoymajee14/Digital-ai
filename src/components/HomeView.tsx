@@ -35,10 +35,10 @@ export function HomeView({ setCurrentView, setSelectedCourse }: HomeViewProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#070B14] text-white overflow-hidden pt-24 relative">
-      {/* Background Glows matching Immersive UI */}
-      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#6366F1] opacity-20 blur-[120px] rounded-full pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-[#8B5CF6] opacity-15 blur-[100px] rounded-full pointer-events-none"></div>
+    <div className="min-h-screen bg-white text-slate-950 overflow-hidden pt-24 relative">
+      {/* Background Soft Green Glows */}
+      <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-400/10 blur-[120px] rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-teal-400/10 blur-[100px] rounded-full pointer-events-none"></div>
 
       {/* HERO SECTION */}
       <section className="relative pt-12 pb-20 overflow-hidden">
@@ -46,45 +46,45 @@ export function HomeView({ setCurrentView, setSelectedCourse }: HomeViewProps) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             {/* Left Column */}
             <div className="lg:col-span-6 space-y-8">
-              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide uppercase shadow-sm">
                 <span className="mr-2">✦</span> The Future of Learning is Here
               </div>
 
-              <h1 className="text-[52px] sm:text-[84px] leading-[0.9] font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400">
+              <h1 className="text-[52px] sm:text-[84px] leading-[0.9] font-extrabold tracking-tighter text-slate-900">
                 Master AI.<br />Build Your Future.
               </h1>
 
-              <p className="text-lg text-slate-400 max-w-md leading-relaxed">
+              <p className="text-lg text-slate-600 max-w-md leading-relaxed">
                 Learn practical AI and digital skills from industry experts through structured, project-based courses designed for the next era of business.
               </p>
 
               <div className="flex items-center space-x-4 pt-4">
                 <button 
                   onClick={() => setCurrentView('pricing')}
-                  className="bg-white text-black px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-100 shadow-xl transition-all"
+                  className="bg-emerald-600 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-emerald-500 shadow-lg shadow-emerald-500/20 transition-all"
                 >
                   Explore Courses
                 </button>
                 <button 
                   onClick={() => setCurrentView('courses')}
-                  className="border border-white/20 hover:bg-white/5 px-8 py-4 rounded-xl font-bold text-base transition-colors"
+                  className="border border-slate-300 hover:bg-emerald-50 text-slate-800 px-8 py-4 rounded-xl font-bold text-base transition-colors"
                 >
                   View Curriculum
                 </button>
               </div>
 
               {/* Stats Bar */}
-              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/5">
+              <div className="grid grid-cols-3 gap-8 pt-8 border-t border-slate-200">
                 <div>
-                  <p className="text-2xl font-bold">10,000+</p>
+                  <p className="text-2xl font-bold text-slate-900">10,000+</p>
                   <p className="text-xs text-slate-500 uppercase tracking-widest">Learners</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold">100+</p>
+                  <p className="text-2xl font-bold text-slate-900">100+</p>
                   <p className="text-xs text-slate-500 uppercase tracking-widest">Courses</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold">50+</p>
+                  <p className="text-2xl font-bold text-slate-900">50+</p>
                   <p className="text-xs text-slate-500 uppercase tracking-widest">Experts</p>
                 </div>
               </div>
@@ -92,9 +92,9 @@ export function HomeView({ setCurrentView, setSelectedCourse }: HomeViewProps) {
 
             {/* Right Column - Floating AI Learning Dashboard preview */}
             <div className="lg:col-span-6 relative">
-              <div className="bg-white/5 border border-white/10 backdrop-blur-2xl rounded-3xl p-8 shadow-[0_32px_64px_rgba(0,0,0,0.5)] relative z-20">
+              <div className="bg-[#F0FDF4] border border-emerald-200 backdrop-blur-2xl rounded-3xl p-8 shadow-xl relative z-20">
                 <div className="flex items-center justify-between mb-8">
-                  <h3 className="font-bold text-lg">Learning Dashboard</h3>
+                  <h3 className="font-bold text-lg text-slate-900">Learning Dashboard</h3>
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
                     <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
@@ -103,39 +103,39 @@ export function HomeView({ setCurrentView, setSelectedCourse }: HomeViewProps) {
                 </div>
 
                 <div className="space-y-6">
-                  <div className="bg-white/5 rounded-2xl p-6 border border-white/5">
+                  <div className="bg-white rounded-2xl p-6 border border-emerald-100 shadow-sm">
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <span className="text-[10px] uppercase tracking-widest text-indigo-400 font-bold">In Progress</span>
-                        <h4 className="text-xl font-bold mt-1">AI Productivity Masterclass</h4>
-                        <p className="text-sm text-slate-400 mt-1">Module 4: Automated Workflows</p>
+                        <span className="text-[10px] uppercase tracking-widest text-emerald-600 font-bold">In Progress</span>
+                        <h4 className="text-xl font-bold mt-1 text-slate-900">AI Productivity Masterclass</h4>
+                        <p className="text-sm text-slate-600 mt-1">Module 4: Automated Workflows</p>
                       </div>
-                      <div className="bg-[#22D3EE]/20 text-[#22D3EE] p-2 rounded-xl">
+                      <div className="bg-emerald-100 text-emerald-700 p-2 rounded-xl">
                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path></svg>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
-                        <div className="w-[78%] h-full bg-gradient-to-r from-[#6366F1] to-[#22D3EE]"></div>
+                      <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="w-[78%] h-full bg-gradient-to-r from-emerald-500 to-teal-400"></div>
                       </div>
-                      <span className="text-sm font-bold">78%</span>
+                      <span className="text-sm font-bold text-slate-900">78%</span>
                     </div>
                     <button 
                       onClick={() => setCurrentView('player')}
-                      className="w-full mt-6 py-3 bg-white/10 hover:bg-white/20 rounded-xl font-semibold transition-all"
+                      className="w-full mt-6 py-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-xl font-semibold transition-all border border-emerald-200"
                     >
                       Continue Learning →
                     </button>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
+                    <div className="bg-white p-4 rounded-2xl border border-emerald-100 shadow-sm">
                       <p className="text-xs text-slate-500 uppercase tracking-widest">Hours Learned</p>
-                      <p className="text-2xl font-bold mt-1">42.5h</p>
+                      <p className="text-2xl font-bold mt-1 text-slate-900">42.5h</p>
                     </div>
-                    <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
+                    <div className="bg-white p-4 rounded-2xl border border-emerald-100 shadow-sm">
                       <p className="text-xs text-slate-500 uppercase tracking-widest">Certificates</p>
-                      <p className="text-2xl font-bold mt-1">12</p>
+                      <p className="text-2xl font-bold mt-1 text-slate-900">12</p>
                     </div>
                   </div>
                 </div>
